@@ -8,6 +8,11 @@
 // SECURITY ISSUES
 define('IN_PHPSTATS', true);
 
+//Debug mode
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Inizializzazione delle variabili
            $short_url=1;  // Mostra url corti quando possibile - Show short url when it's possible
          $is_loged_in=0;  // Non loggato - Not logged in
@@ -43,12 +48,10 @@ if(isset($_COOKIE['php_stats_esclusion'])) $php_stats_esclusion=$_COOKIE['php_st
        if(isset($_SERVER['QUERY_STRING'])) $QUERY_STRING=trim(addslashes($_SERVER['QUERY_STRING'])); else $QUERY_STRING='';
            if(isset($_SERVER['PHP_SELF'])) $PHP_SELF=addslashes($_SERVER['PHP_SELF']); else $PHP_SELF='admin.php';
 
-if (!get_magic_quotes_gpc()) {
-	$_POST 		= addslashes_deep($_POST);
-	$_GET 		= addslashes_deep($_GET);
-	$_COOKIE 	= addslashes_deep($_COOKIE);
-	$_REQUEST 	= addslashes_deep($_REQUEST);
-}
+$_POST 		= addslashes_deep($_POST);
+$_GET 		= addslashes_deep($_GET);
+$_COOKIE 	= addslashes_deep($_COOKIE);
+$_REQUEST 	= addslashes_deep($_REQUEST);
 
 function addslashes_deep($value)
 {
@@ -103,7 +106,7 @@ $template_path = 'templates/' . $option['template'];
 /////////////////////////////////
 // PULIZIA CACHE - CLEAN CACHE //
 /////////////////////////////////
-if (!$option['clear_cache']) { // Controllo se non si è forzato il riconoscimento continuo - Check for continuous forced recognition
+if (!$option['clear_cache']) { // Controllo se non si ï¿½ forzato il riconoscimento continuo - Check for continuous forced recognition
     if (($php_stats_cache != '1') || (time() > ($option['inadm_lastcache_time'] + 1200))) {
         if (in_array($action, $cache_recn_arr))
             $cache_recn = 1;
@@ -229,7 +232,7 @@ if ($cache_recn == 1 && (user_is_logged_in() || (!$option['use_pass'] && in_arra
     if ($error['debug_level'])
         $action = info_box('<b>PHP-STATS AUTO DEBUG MODE</b>', $error['debug_level_error']);
     
-    // Visualizzo il login se non si è loggati o il logout se lo si è. - Show login if not logged in or logout if logged in
+    // Visualizzo il login se non si ï¿½ loggati o il logout se lo si ï¿½. - Show login if not logged in or logout if logged in
     if ($is_loged_in) {
         $admin_menu['status']     = $admin_menu['logout'];
         $admin_menu['status_rev'] = 'logout';
@@ -245,7 +248,7 @@ if ($cache_recn == 1 && (user_is_logged_in() || (!$option['use_pass'] && in_arra
         }
     }
     
-    /*** Controllo validità dei file di browscap */
+    /*** Controllo validitï¿½ dei file di browscap */
     if (filesize('browscap/browscap.ini') < 50000) {
         unlink('browscap/browscap.ini');
         unlink('browscap/cache.php');

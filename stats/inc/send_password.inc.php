@@ -51,7 +51,7 @@ if($mode=='activate')
   if(($key==$option['user_pass_key']) && ($option['user_pass_key']!='') && (strlen($key)==30))
     {
     /*** ***/
-	user_change_password($option[user_pass_new]);
+	user_change_password($option['user_pass_new']);
 	sql_query("UPDATE $option[prefix]_config SET value='' WHERE name='user_pass_new'");
 	sql_query("UPDATE $option[prefix]_config SET value='' WHERE name='user_pass_key'");
 /***sql_query("UPDATE $option[prefix]_config SET value='$option[user_pass_new]' WHERE name='admin_pass'"); ***/

@@ -195,7 +195,7 @@ else{
         closedir($hook);
         natsort($elenco0);
         // Fine lettura directory LANG
-        while(list($key, $val)=each($elenco0)){
+        foreach ($elenco0 as $key => $val){
                 $val=chop($val);
                 // Leggo il nome della lingua
                 $language_name=file("lang/$val/lang.name");
@@ -206,7 +206,7 @@ else{
         // QUANTE CIFRE MINIME METTO?
         $return.="\n\t<tr><td align=\"right\" bgcolor=$style[table_bgcolor]><span class=\"tabletextA\">$pref[cifre_1]</span></td><td bgcolor=$style[table_bgcolor]><select name=\"option_new[cifre]\">";
         $cifrelist=Array('1','2','3','4','5','6','7','8');
-        while(list($key,$val)=each($cifrelist)) $return.="<option value=\"$val\"".($option['cifre']==$val ? ' selected' : '').">$val</option>";
+        foreach ($cifrelist as $key => $val) $return.="<option value=\"$val\"".($option['cifre']==$val ? ' selected' : '').">$val</option>";
         $return.="</select><span class=\"tabletextA\"> $pref[cifre_2]</span></td></tr>";
 
         // SCELTA STILE CONTATORE
@@ -237,7 +237,7 @@ else{
         // TIMEZONE
         "\n\t<tr><td align=\"right\" bgcolor=$style[table_bgcolor]><span class=\"tabletextA\">$pref[zone_1]</span></td><td bgcolor=$style[table_bgcolor]><select name=\"option_new[timezone]\">\"";
         $timelist=Array('-12','-11','-10','-9','-8','-7','-6','-5','-4','-3','-2','-1','0','+1','+2','+3','+4','+5','+6','+7','+8','+9','+10','+11','+12');
-        while(list($key,$val)=each($timelist)) $return.="\n\t\t<option value=\"$val\"".($option['timezone']==$val ? ' selected' : '').">$val</option>";
+        foreach($timelist as $key => $val) $return.="\n\t\t<option value=\"$val\"".($option['timezone']==$val ? ' selected' : '').">$val</option>";
         $return.="</select><span class=\"tabletextA\">$pref[zone_2]</span></td></tr>";
 
         // NOME DEL SITO
@@ -260,7 +260,7 @@ else{
         natsort($elenco2);
         // Fine lettura directory TEMPLATES
         $return.="\n\t<tr><td valign=\"top\" align=\"right\" bgcolor=$style[table_bgcolor]><span class=\"tabletextA\">$pref[template]</span></td><td bgcolor=$style[table_bgcolor]>";
-        while(list($key,$val)=each($elenco2)){
+        foreach($elenco2 as $key => $val){
                 $val=chop($val);
                 $return.="\n\t\t<input type=\"radio\" name=\"option_new[template]\" value=\"$val\"".($val==$option['template'] ? ' checked' : '')." class=\"radio\"> <span class=\"tabletextA\"><b>$val</b> </span><br>";
         }
@@ -384,8 +384,8 @@ else{
                 }
         }
         closedir($hook);
-        natsort($elenco);;
-        while(list($key,$val)=each($elenco)){
+        natsort($elenco);
+        foreach($elenco as $key => $val){
                 $val=chop($val);
                 $return.="<option value=\"$val\"".($scstyle==$val ? ' selected' : '').">$val</option>";
         }

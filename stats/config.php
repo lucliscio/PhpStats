@@ -56,7 +56,7 @@ $default_pages=array('/','/index.htm','/index.html','/default.htm','/index.php',
 if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on' && substr($option['script_url'],0,5)==='http:') $option['script_url']='https:'.substr($option['script_url'],5);
 if(substr($option['script_url'],-1)==='/') $option['script_url']=substr($option['script_url'],0,-1);
 
-ini_set('display_errors', false);
-error_reporting(E_ERROR);
-ignore_user_abort(true);
+//ini_set('display_errors', false);
+//error_reporting(E_ERROR);
+//ignore_user_abort(true);
 ?>

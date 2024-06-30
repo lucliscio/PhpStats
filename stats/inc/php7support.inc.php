@@ -34,9 +34,29 @@
     $resultSet;
 
 
-    if(!function_exists("mysql_connect")){
+    if(version_compare(PHP_VERSION, '7.0.0', '>=')){
 
-        // Connessione al db ------------------------------------------------------- 
+        //old php constant ---------------------------------------------------------
+        
+        define("MYSQL_BOTH", MYSQLI_BOTH);
+        define("MYSQL_ASSOC", MYSQLI_ASSOC);
+        
+        
+        // Emulate register_globals on ----------------------------------------------
+        
+        if (!ini_get('register_globals')) {
+            $superglobals = array($_SERVER, $_ENV,
+                $_FILES, $_COOKIE, $_POST, $_GET);
+            if (isset($_SESSION)) {
+                array_unshift($superglobals, $_SESSION);
+            }
+            foreach ($superglobals as $superglobal) {
+                extract($superglobal, EXTR_SKIP);
+            }
+        }
+        
+        
+        // Connessione al db -------------------------------------------------------
 
         function mysql_connect($host, $uname, $passwd){
             global $dblink;
@@ -145,6 +165,7 @@
             return mysqli_error($dblink);
         }
 
+
         //Espressioni regolari -------------------------------------------------------------------
 
         function ereg_replace($pattern, $replacement, $string){
@@ -155,12 +176,20 @@
         function ereg($pattern, $string){
             $newpattern = '/'.$pattern.'/m';
             return preg_match_all($newpattern, $string, $matches, PREG_SET_ORDER, 0);
-        }  
+        }
 
         function eregi($pattern, $string){
             $newpattern = '/'.$pattern.'/i';
             return preg_match_all($newpattern, $string, $matches, PREG_SET_ORDER, 0);
-        }  
+        }
+
+
+        //Funzioni deprecate che non servono più a nulla -------------------------------------------
+        
+        function set_magic_quotes_runtime(bool $new_setting){
+            return true;
+        }
+
 
     }
 

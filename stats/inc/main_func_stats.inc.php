@@ -107,7 +107,7 @@ function getfromip($arg, $nome_os, $nome_bw)
 			$nome_os,
 			$nome_bw,
 			FALSE
-		)); // Se non è un crawler lascia i valori inalterati
+		)); // Se non ï¿½ un crawler lascia i valori inalterati
 }
 
 // Restituisco nome del motore e query dall'url passato //
@@ -119,7 +119,7 @@ function getengine($reffer)
 		if (substr_count($reffer, '/') > 5)
 			$standardse = FALSE; //riconoscimento motori con url rewriting
 		else
-			return FALSE; //se non c'è querystring e non è url rewriting non è un motore;
+			return FALSE; //se non c'ï¿½ querystring e non ï¿½ url rewriting non ï¿½ un motore;
 	}
 	if ($standardse)
 		include($append_path . 'def/search_engines.dat');
@@ -151,7 +151,7 @@ function getengine($reffer)
 			)
 		);
 	
-	$reffer          = str_replace('&amp;', '§§§', $reffer); // Il carattere &amp; può dare problemi => rimpiazzo con §§§
+	$reffer          = str_replace('&amp;', 'ï¿½ï¿½ï¿½', $reffer); // Il carattere &amp; puï¿½ dare problemi => rimpiazzo con ï¿½ï¿½ï¿½
 	$reffer          = unhtmlentities($reffer); // DECODIFICO CARATTERI SPECIALI
 	$URLdata         = parse_url($reffer); // estraggo le informazioni dall'url
 	$URLdata['host'] = strtolower($URLdata['host']); // Metto l'host in caratteri minuscoli
@@ -169,10 +169,10 @@ function getengine($reffer)
 		//decido a seconda del $searchstring su cosa effettuare la ricerca
 		$whatToSearch = (strpos($searchstring, '/') === FALSE ? $URLdata['host'] : $URLdata['host'] . $URLdata['path']);
 		
-		if (strpos($searchstring, '*') === FALSE) { //controllo se il domain è incluso o se c'è un carattere jolly
+		if (strpos($searchstring, '*') === FALSE) { //controllo se il domain ï¿½ incluso o se c'ï¿½ un carattere jolly
 			if (strpos($whatToSearch, $searchstring) === FALSE)
 				continue; //cerco la stringa per identificare il motore di ricerca
-			$tmpdomain      = $forcedDomain; //il dominio è quello forzato
+			$tmpdomain      = $forcedDomain; //il dominio ï¿½ quello forzato
 			$includedDomain = TRUE;
 		} else {
 			$pattern = '/' . str_replace(Array(
@@ -200,29 +200,29 @@ function getengine($reffer)
 		if (isSet($queryArgs[$queryKW]))
 			$tmpquery = urldecode($queryArgs[$queryKW]);
 		else
-			continue; //il punto di query non è stato trovato
+			continue; //il punto di query non ï¿½ stato trovato
 		
 		if (strpos($tmpquery, 'cache:') !== FALSE)
 			continue; //non considero la cache di google
 		
-		//a questo punto il record è quello giusto
+		//a questo punto il record ï¿½ quello giusto
 		
 		if ($pageKW !== null) { //riconoscimento della pagina
 			if (!isSet($queryArgs[$pageKW]))
-				$resultPage = 1; //il punto di query non è stato trovato, quindi è la prima pagina
+				$resultPage = 1; //il punto di query non ï¿½ stato trovato, quindi ï¿½ la prima pagina
 			else {
 				$recordNumber = $queryArgs[$pageKW] - 0; //registro il numero di record
 				if ($recordPerPage === null)
-					$recordPerPage = 10; //il default di record per pagina è 10
+					$recordPerPage = 10; //il default di record per pagina ï¿½ 10
 				$resultPage = intval($recordNumber / $recordPerPage) + 1;
 			}
 		}
 		
 		$query = str_replace('+', ' ', $tmpquery); //tolgo i + dalle keywords
 		
-		if (strpos($tmpdomain, '.') !== FALSE) { //è un dominio multiplo Es. google.com.ar
+		if (strpos($tmpdomain, '.') !== FALSE) { //ï¿½ un dominio multiplo Es. google.com.ar
 			$tmp = explode('.', $tmpdomain);
-			for ($i = count($tmp); $i >= 0; $i--) { //in ordine inverso perchè i domini significativi sono sempre alla fine
+			for ($i = count($tmp); $i >= 0; $i--) { //in ordine inverso perchï¿½ i domini significativi sono sempre alla fine
 				if (!$tmp[$i])
 					continue; //esistono domini come 'google.com.'
 				$tmpdomain = $tmp[$i];
@@ -236,7 +236,7 @@ function getengine($reffer)
 		}
 		
 		if ($forcedDomain && ($tmpdomain == 'www' || $tmpdomain == 'com' || $tmpdomain == 'net' || $tmpdomain == 'org'))
-			$domain = $forcedDomain; //se è presente il dominio forzato lo uso al posto di com,org,net
+			$domain = $forcedDomain; //se ï¿½ presente il dominio forzato lo uso al posto di com,org,net
 		else
 			$domain = $tmpdomain;
 		
@@ -285,7 +285,7 @@ function is_internal($ref)
 	for ($i = 0; $i < $countServerUrl; ++$i) {
 		$tmp = $serverUrl[$i];
 		if ($tmp === '')
-			continue; //la riga è vuota
+			continue; //la riga ï¿½ vuota
 		if (strpos($ref, $tmp) !== 0)
 			continue; //non trovato
 		return TRUE; //trovato
@@ -330,7 +330,7 @@ function checkDBLine($fd, $ip, $char_line, $limit_char)
 	$start = substr($res, 0, 10) - 0;
 	$end   = substr($res, 10, 10) - 0;
 	if ($ip < $start)
-		return 'unknown'; //l'ip non è nel db
+		return 'unknown'; //l'ip non ï¿½ nel db
 	else if ($ip >= $start && $ip <= $end)
 		return substr($res, 20, $limit_char); //trovato, restituire id
 	else
@@ -357,8 +357,8 @@ function getIP($ip, $char_line, $dbfile, $idxfile, $limit_char)
 function do_clear($user_id_tmp = '', $force_del_ip = 0)
 {
 	global $option, $date, $append, $modulo, $secondi, $mese_oggi, $data_oggi;
-	// Se specifico l'user_id e force_del_ip=0 è perchè ho un accesso a cavallo dei 2 giorni e ha priorità
-	// Se force_del_ip=1 vuol dire che quell'ip è scaduto e voglio essere sicuro che sia cancellato dalla cache
+	// Se specifico l'user_id e force_del_ip=0 ï¿½ perchï¿½ ho un accesso a cavallo dei 2 giorni e ha prioritï¿½
+	// Se force_del_ip=1 vuol dire che quell'ip ï¿½ scaduto e voglio essere sicuro che sia cancellato dalla cache
 	$clause = ($user_id_tmp == '' ? "WHERE data<'$secondi'" : "WHERE visitor_id='$user_id_tmp'");
 	$result = sql_query("SELECT user_id,data,lastpage,visitor_id,hits,visits,reso,colo,os,bw,host,tld,lang,giorno FROM $option[prefix]_cache $clause LIMIT 1");
 	if (mysql_affected_rows() < 1)

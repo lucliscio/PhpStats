@@ -75,7 +75,7 @@ patch Francesco Mortara - fmortara@mfweb.it - 2012-01-06
 
       $titlelength=strlen($title);
       $urllength=strlen($url);
-      if($titlelength+$urllength>$maxwidth){//controllo se titolo e url sono più lunghe di maxwidth - check if titles ad url lenght > maxwidth
+      if($titlelength+$urllength>$maxwidth){//controllo se titolo e url sono piï¿½ lunghe di maxwidth - check if titles ad url lenght > maxwidth
         $tmp=floor($maxwidth/3);
         if($titlelength<$tmp*2){//uso lo spazio risparmiato per l'url
           $tmp=$maxwidth-$titlelength;//spazio disponibile per url
@@ -148,7 +148,7 @@ function formatdate($date,$mode=0){
     case 2:
        list($date_m,$date_d,$date_y)=explode('-',date('m-d-y',$date));
        return str_replace(Array('%mount%','%day%','%year%'),Array($date_m,$date_d,$date_y),$varie['date_format_3']);
-/*** Modalità aggiunta e usata nei dettagli - visualizza la data col nome del giorno ***/
+/*** Modalitï¿½ aggiunta e usata nei dettagli - visualizza la data col nome del giorno ***/
     case 3:
        list($date_N,$date_n,$date_j,$date_Y)=explode('-',date('N-n-j-Y',$date));
        return str_replace(Array('%wday%','%mount%','%day%','%year%'),Array($varie['days'][$date_N-1],formatmount($date_n),$date_j,$date_Y),'%wday% %day% %mount% %year%');
@@ -300,8 +300,8 @@ $option=Array(
 ';
 
 // Scrivo le variabili presenti in config.php
-while (list ($key, $value) = each ($option))
-   {
+foreach ($option as $key => $value)
+{
    switch ($key)
      {
      case 'script_url':
@@ -403,7 +403,7 @@ unset($tmpModuli,$tmpServerUrl,$tmpExc_fol,$tmpExc_sip,$tmpExc_dip);
 
 // SCRIVO L'ARRAY DEFAULT PAGE - WRITE DEFAULT ARRAY
 $options_text.="\$default_pages=Array(\n";
-while (list ($key, $value) = each ($default_pages)) $options_text.="'$value',\n";
+foreach ($default_pages as $key => $value) $options_text.="'$value',\n";
 $options_text=substr($options_text, 0, -2).");\n?>";
 
 	// CREO IL FILE DI LOCK E FACCIO UNO SLEEP DI 1 SEC ALTRIMENTI NON VIENE MAI RILEVATO - CREATE LOCK FILE AND MAKE 1 SEC SLEEP
@@ -486,7 +486,7 @@ function clear_cache()
 	global $option,$modulo,$db;
 
 //	$query="CREATE TABLE $option[prefix]_cache_clone ( user_id double NOT NULL default '0', data int(11) NOT NULL default '0', lastpage varchar(255) NOT NULL default '0', visitor_id varchar(32) NOT NULL default '', hits tinyint(3) unsigned NOT NULL default '0', visits smallint(5) unsigned NOT NULL default '0', reso varchar(10) NOT NULL default '', colo varchar(10) NOT NULL default '', os varchar(20) NOT NULL default '', bw varchar(20) NOT NULL default '', host varchar(50) NOT NULL default '', tld varchar(7) NOT NULL default 'unknown', lang varchar(8) NOT NULL default '', giorno varchar(10) NOT NULL default '', notbrowser tinyint(1) NOT NULL default '0', level tinyint(3) unsigned NOT NULL default '0', UNIQUE KEY user_id (user_id)) TYPE=";
-	/*** Aggiunto IF NOT EXISTS se la tabella esistesse già (in qualche raro caso capita), altrimenti si bloccano le statistiche */
+	/*** Aggiunto IF NOT EXISTS se la tabella esistesse giï¿½ (in qualche raro caso capita), altrimenti si bloccano le statistiche */
 	$query="CREATE TABLE IF NOT EXISTS $option[prefix]_cache_clone (
 	  user_id int(10) unsigned NOT NULL default '0',
 	  data int(11) unsigned NOT NULL default '0',
@@ -587,7 +587,7 @@ function clear_cache()
 	}
 
 /***
-Questa parte l'ho spostata in fondo, prima dell'eliminazione della tabella _cache_clone perché esegue una query (errata) che ne altera il contenuto del numero di visitatori e pagine visitate.
+Questa parte l'ho spostata in fondo, prima dell'eliminazione della tabella _cache_clone perchï¿½ esegue una query (errata) che ne altera il contenuto del numero di visitatori e pagine visitate.
 ***/
 	// LINGUE (impostate dal browser)
 	if($modulo[2])

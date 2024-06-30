@@ -346,12 +346,13 @@ function calendar()
 		}
 	}
 	
-	$lastTotal = NULL;
+	$lastTotal = null;
 	for ($i = 0; $i < 12; ++$i) {
 		$month = $monthOrder[$i];
-		
-		if ($lastTotal !== NULL && $monthTotal[$month] !== null) {
-			$monthIncrement[$month] = round(($monthAverage[$month] - $lastTotal) / $lastTotal * 100, 1);
+		if ($lastTotal !== null && $monthTotal[$month] !== null) {
+			if($lastTotal != 0){
+				$monthIncrement[$month] = round(($monthAverage[$month] - $lastTotal) / $lastTotal * 100, 1);
+			}
 		}
 		
 		$lastTotal = $monthAverage[$month];

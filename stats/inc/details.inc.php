@@ -250,7 +250,7 @@ function details()
 
                 if($referer!==NULL)
                 {
-                        if(count($referer)===1)
+                        if(count((array)$referer)===1)
                         	$referer=formaturl($referer,'',80,50,-25);
                         else
                         {
@@ -397,7 +397,7 @@ function details()
                 if($referer!==NULL)
                 {
                         $table.="\n\t\t\t<tr>";
-                        if(count($referer)===1) 
+                        if(count((array)$referer)===1) 
                         	$table.="<td bgcolor=$style[table_title_bgcolor] width=\"5%\" nowrap><span class=\"tabletitle\"><center>&nbsp;$string[details_referer]&nbsp;</center></span></td><td bgcolor=$style[table_bgcolor]><span class=\"tabletextA\">$referer</span></td></tr>";
                         else
                         {

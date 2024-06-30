@@ -178,7 +178,7 @@ if($modulo[1]==2){
                 "<form action='./admin.php' method='GET' name=form1><span class=\"tabletextA\">$string[calendar_view]</span>".
                 "<input type=\"hidden\" name=\"action\" value=\"systems\">".
                 "<input type=\"hidden\" name=\"mode\" value=\"$mode\">".
-                "<input type=\"hidden\" name=\"show_bw\" value=\"".$filter_number{0}."\">".
+                "<input type=\"hidden\" name=\"show_bw\" value=\"".$filter_number[0]."\">".
                 //"<input type=\"hidden\" name=\"show_gr\" value=\"".$filter_number{1}."\">".
                 //"<input type=\"hidden\" name=\"show_sp\" value=\"".$filter_number{2}."\">".
                 "<SELECT name=selected_month>";
