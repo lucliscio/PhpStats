@@ -20,6 +20,8 @@
      *  Wrapper per le funzioni dell'interfaccia mysql e delle espressioni regolari 
      *  di php non piu presenti in php7.
      * 
+     *  Viene creato un log di tutte le chiamate fatte alle funzioni deprecate usando: debug_backtrace()
+     * 
      *  @author  Luca Liscio <lucliscio@h0model.org>
      *  @version v 1.4 2018/07/02 22:30:00
      *  @copyright Copyright 2018 Luca Liscio 
