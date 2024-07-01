@@ -17,14 +17,14 @@
      */
 
     /**
-     *  Wrapper per le funzioni dell'interfaccia mysql e delle espressioni regolari 
+     *  Wrapper per le funzioni dell'interfaccia mysql e delle espressioni regolari
      *  di php non piu presenti in php7.
      * 
      *  Viene creato un log di tutte le chiamate fatte alle funzioni deprecate usando: debug_backtrace()
      * 
      *  @author  Luca Liscio <lucliscio@h0model.org>
-     *  @version v 1.4 2018/07/02 22:30:00
-     *  @copyright Copyright 2018 Luca Liscio 
+     *  @version v 2.0 2024/07/01 19:15:00
+     *  @copyright Copyright 2024 Luca Liscio
      *  @license http://www.gnu.org/licenses/agpl-3.0.html GNU/AGPL3
      *   
      *  @filesource
@@ -62,12 +62,18 @@
 
         function mysql_connect($host, $uname, $passwd){
             global $dblink;
+            
+            saveToLog(debug_backtrace()[0]);
+
             $dblink = mysqli_connect($host, $uname, $passwd);
             return $dblink;
         }
 
         function mysql_pconnect($host, $uname, $passwd){
             global $dblink;
+
+            saveToLog(debug_backtrace()[0]);
+
             $phost = "p:".$host;
             $dblink = mysqli_connect($phost, $uname, $passwd);
             return $dblink;
@@ -75,6 +81,9 @@
 
         function mysql_select_db($dbname){
             global $dblink;
+
+            saveToLog(debug_backtrace()[0]);
+
             $result = mysqli_select_db($dblink, $dbname);
             return $result;
         }
@@ -84,46 +93,75 @@
 
         function mysql_query($query) {
             global $dblink, $resultSet;
+
+            saveToLog(debug_backtrace()[0]);
+
             $resultSet = mysqli_query($dblink, $query);
             return $resultSet;
         }
 
         function mysql_num_rows($resSet){
+
+            saveToLog(debug_backtrace()[0]);
+
             return mysqli_num_rows($resSet);
         }
 
         function mysql_fetch_row($resSet){
+
+            saveToLog(debug_backtrace()[0]);
+
             return mysqli_fetch_row($resSet);
         }
 
         function mysql_fetch_array($resSet){
+
+            saveToLog(debug_backtrace()[0]);
+
             return mysqli_fetch_array($resSet);
         }
 
         function mysql_fetch_assoc($resSet){
+
+            saveToLog(debug_backtrace()[0]);
+
             return mysqli_fetch_assoc($resSet);
         }
 
         function mysql_close(){
             global $dblink;
+
+            saveToLog(debug_backtrace()[0]);
+
             return mysqli_close($dblink);
         }
 
         function mysql_affected_rows(){
             global $dblink;
+
+            saveToLog(debug_backtrace()[0]);
+
             return mysqli_affected_rows($dblink);
         }
 
         function mysql_free_result($resSet){
+
+            saveToLog(debug_backtrace()[0]);
+
             mysqli_free_result($resSet);
         }
 
         function mysql_num_fields($resSet){
+
+            saveToLog(debug_backtrace()[0]);
+            
             mysqli_num_fields($resSet);
         }
 
-        function mysql_result ($result , $row , $field){
+        function mysql_result($result , $row , $field){
             $fetch;
+
+            saveToLog(debug_backtrace()[0]);
 
             mysqli_data_seek($result, $row);
             if(!empty($field)) {
@@ -141,8 +179,11 @@
             return $fetch;
         }
     
-        function mysql_real_escape_string ($unescaped_string){
+        function mysql_real_escape_string($unescaped_string){
             global $dblink;
+
+            saveToLog(debug_backtrace()[0]);
+
             return mysqli_real_escape_string ($dblink, $unescaped_string);
         }
 
@@ -151,6 +192,9 @@
 
         function mysql_get_server_info(){
             global $dblink;
+            
+            saveToLog(debug_backtrace()[0]);
+
             return mysqli_get_server_info($dblink);
         }
 
@@ -159,11 +203,17 @@
 
         function mysql_errno() {
             global $dblink;
+
+            saveToLog(debug_backtrace()[0]);
+
             return mysqli_errno($dblink);
         }
 
         function mysql_error() {
             global $dblink;
+            
+            saveToLog(debug_backtrace()[0]);
+
             return mysqli_error($dblink);
         }
 
@@ -171,16 +221,25 @@
         //Espressioni regolari -------------------------------------------------------------------
 
         function ereg_replace($pattern, $replacement, $string){
+            
+            saveToLog(debug_backtrace()[0]);
+
             $newpattern = '/'.$pattern.'/';
             return preg_replace($newpattern, $replacement, $string);
         }
 
         function ereg($pattern, $string){
+
+            saveToLog(debug_backtrace()[0]);
+
             $newpattern = '/'.$pattern.'/m';
             return preg_match_all($newpattern, $string, $matches, PREG_SET_ORDER, 0);
         }
 
         function eregi($pattern, $string){
+            
+            saveToLog(debug_backtrace()[0]);
+
             $newpattern = '/'.$pattern.'/i';
             return preg_match_all($newpattern, $string, $matches, PREG_SET_ORDER, 0);
         }
@@ -189,6 +248,9 @@
         //Funzioni deprecate che non servono più a nulla -------------------------------------------
         
         function set_magic_quotes_runtime(bool $new_setting){
+            
+            saveToLog(debug_backtrace()[0]);
+
             return true;
         }
 
@@ -216,4 +278,16 @@
         }
 
         return $ip;
+    }
+
+    function saveToLog($track){
+
+        $today = date("F j, Y, g:i a");
+        $msg = "[$today] - ";
+
+        foreach ($track as $Key => $Value) {
+            $msg .= '&' . $Key . '=' . $Value;
+        }
+
+        error_log($msg."\n", 3, './deprecated_calls.log');
     }
