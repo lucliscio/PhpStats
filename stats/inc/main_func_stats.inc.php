@@ -25,7 +25,7 @@ function db_connect()
 			die($error['no_connection']);
 		}
 	}
-	$db_sel = mysql_select_db($option[database]);
+	$db_sel = mysql_select_db($option['database']);
 	if ($db_sel == false) {
 		logerrors("DB-SELECT" . "|" . date("d/m/Y H:i:s") . "|FAILED");
 		die($error['no_database']);

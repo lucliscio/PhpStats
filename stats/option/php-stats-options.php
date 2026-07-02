@@ -4,11 +4,11 @@ error_reporting(E_ERROR);
 ignore_user_abort(true);
 
 $option=Array(
-'host'=>'localhost:3307',
+'host'=>'localhost:3306',
 'database'=>'my_modeltreno',
 'user_db'=>'root',
 'pass_db'=>'miotuo',
-'script_url'=>'https://localhost/PhpStats/stats',
+'script_url'=>'https://localhost/Prj/PhpStats/stats',
 'prefix'=>'php_stats',
 'callviaimg'=>0,
 'persistent_conn'=>0,
@@ -59,7 +59,7 @@ $option=Array(
 'prune_4_value'=>1000,
 'prune_5_on'=>0,
 'prune_5_value'=>1000,
-'phpstats_ver'=>'2.7',
+'phpstats_ver'=>'2.7.5',
 'inadm_lastcache_time'=>1457371307,
 'ip_timeout'=>1,
 'page_timeout'=>1200,

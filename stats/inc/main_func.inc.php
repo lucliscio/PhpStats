@@ -25,7 +25,7 @@ function db_connect() {
         $db=mysql_connect($option['host'],$option['user_db'],$option['pass_db']);
         if($db==false) { logerrors("DB-CONN"."|".date("d/m/Y H:i:s")."|FAILED"); die($error['no_connection']." ".mysqli_connect_error()); }
         }
-  $db_sel=mysql_select_db($option['database']);
+  $db_sel=mysql_select_db($option["database"]);
   if($db_sel==false) { logerrors("DB-SELECT"."|".date("d/m/Y H:i:s")."|FAILED"); die($error['no_database']); }
   }
 
