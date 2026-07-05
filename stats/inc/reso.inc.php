@@ -78,7 +78,7 @@ function reso()
       				"<tr onmouseover=\"setPointer(this, '$style[table_hitlight]', '$style[table_bgcolor]')\" onmouseout=\"setPointer(this, '$style[table_bgcolor]', '$style[table_bgcolor]')\">".
       				"<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\">$row[reso]</span></td>".
       				"<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$row[sumhits]</b></span><br><span class=\"tabletextA\"><b>$row[sumvisits]</b></span></td>".
-      				"<td bgcolor=$style[table_bgcolor]><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"".($row['sumhits']/MAX($total_hits,1)*350)."\" height=\"7\"> (".round($row['sumhits']*100/MAX($total_hits,1),1)."%)</span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"".($row['sumvisits']/MAX($total_accessi,1)*350)."\" height=\"7\"> (".round($row['sumvisits']*100/MAX($total_accessi,1),1)."%)</span></td>".
+      				"<td bgcolor=$style[table_bgcolor]><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"".($row['sumhits']/MAX($total_hits,1)*350)."\" height=\"7px\"> (".round($row['sumhits']*100/MAX($total_hits,1),1)."%)</span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"".($row['sumvisits']/MAX($total_accessi,1)*350)."\" height=\"7px\"> (".round($row['sumvisits']*100/MAX($total_accessi,1),1)."%)</span></td>".
       				"</tr>";
       		}
     		elseif ($row['reso']!=='?')
@@ -89,17 +89,17 @@ function reso()
     		++$count;
     	}
   		if($altre['hits']>0)
-  			$return.="<tr onmouseover=\"setPointer(this, '$style[table_hitlight]', '$style[table_bgcolor]')\" onmouseout=\"setPointer(this, '$style[table_bgcolor]', '$style[table_bgcolor]')\"><td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\">$string[reso_altre]</span></td><td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$altre[hits]</b></span><br><span class=\"tabletextA\"><b>$altre[visits]</b></span></td><td  bgcolor=$style[table_bgcolor]><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"".($altre['hits']/$total_hits * 350)."\" height=\"7\"> (".round($altre['hits']*100/$total_hits,1)."%)</span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"".($altre['visits']/$total_accessi * 350)."\" height=\"7\"> (".round($altre['visits']*100/$total_accessi,1)."%)</span></td></tr>";
+  			$return.="<tr onmouseover=\"setPointer(this, '$style[table_hitlight]', '$style[table_bgcolor]')\" onmouseout=\"setPointer(this, '$style[table_bgcolor]', '$style[table_bgcolor]')\"><td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\">$string[reso_altre]</span></td><td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$altre[hits]</b></span><br><span class=\"tabletextA\"><b>$altre[visits]</b></span></td><td  bgcolor=$style[table_bgcolor]><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"".($altre['hits']/$total_hits * 350)."\" height=\"7px\"> (".round($altre['hits']*100/$total_hits,1)."%)</span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"".($altre['visits']/$total_accessi * 350)."\" height=\"7px\"> (".round($altre['visits']*100/$total_accessi,1)."%)</span></td></tr>";
 
   		$return.=
   			"<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"3\" nowrap></td></tr>".
-  			"<tr><td bgcolor=$style[table_bgcolor] colspan=\"3\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"7\" height=\"7\"> $string[hits] <img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"7\" height=\"7\"> $string[visite]</span></center></td></tr>".
+  			"<tr><td bgcolor=$style[table_bgcolor] colspan=\"3\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"7\" height=\"7px\"> $string[hits] <img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"7\" height=\"7px\"> $string[visite]</span></center></td></tr>".
 //  			"<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"3\" nowrap></td></tr>".
   			"</table>".
   			"<br><br>";
 
 
-// Titolo sezione Profondità di colore
+// Titolo sezione Profonditï¿½ di colore
   		if($mode==0)
   			$tmp=str_replace(Array('%MESE%','%ANNO%'),Array(formatmount($sel_mese),$sel_anno),$string['colo_title_2']);
   		else
@@ -124,7 +124,7 @@ function reso()
     				"<tr onmouseover=\"setPointer(this, '$style[table_hitlight]', '$style[table_bgcolor]')\" onmouseout=\"setPointer(this, '$style[table_bgcolor]', '$style[table_bgcolor]')\">".
     				"<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\">$row[colo]</span></td>".
     				"<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$row[sumhits]</b></span><br><span class=\"tabletextA\"><b>$row[sumvisits]</b></span></td>".
-    				"<td bgcolor=$style[table_bgcolor]><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"".($row['sumhits']/MAX($total_hits,1)*350)."\" height=\"7\"> (".round($row['sumhits']*100/MAX($total_hits,1),1)."%)</span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"".($row['sumvisits']/MAX($total_accessi,1)*350)."\" height=\"7\"> (".round($row['sumvisits']*100/MAX($total_accessi,1),1)."%)</span></td>".
+    				"<td bgcolor=$style[table_bgcolor]><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"".($row['sumhits']/MAX($total_hits,1)*350)."\" height=\"7px\"> (".round($row['sumhits']*100/MAX($total_hits,1),1)."%)</span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"".($row['sumvisits']/MAX($total_accessi,1)*350)."\" height=\"7px\"> (".round($row['sumvisits']*100/MAX($total_accessi,1),1)."%)</span></td>".
     				"</tr>";
     		}
     		elseif ($row['colo']!=='?')
@@ -135,11 +135,11 @@ function reso()
     		++$count;
     	}
   		if($altre['hits']>0)
-  			$return.="<tr onmouseover=\"setPointer(this, '$style[table_hitlight]', '$style[table_bgcolor]')\" onmouseout=\"setPointer(this, '$style[table_bgcolor]', '$style[table_bgcolor]')\"><td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\">$string[colo_altre]</span></td><td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$altre[hits]</b></span><br><span class=\"tabletextA\"><b>$altre[visits]</b></span></td><td  bgcolor=$style[table_bgcolor]><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"".($altre['hits']/$total_hits * 350)."\" height=\"7\"> (".round($altre['hits']*100/$total_hits,1)."%)</span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"".($altre['visits']/$total_accessi * 350)."\" height=\"7\"> (".round($altre['visits']*100/$total_accessi,1)."%)</span></td></tr>";
+  			$return.="<tr onmouseover=\"setPointer(this, '$style[table_hitlight]', '$style[table_bgcolor]')\" onmouseout=\"setPointer(this, '$style[table_bgcolor]', '$style[table_bgcolor]')\"><td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\">$string[colo_altre]</span></td><td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$altre[hits]</b></span><br><span class=\"tabletextA\"><b>$altre[visits]</b></span></td><td  bgcolor=$style[table_bgcolor]><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"".($altre['hits']/$total_hits * 350)."\" height=\"7px\"> (".round($altre['hits']*100/$total_hits,1)."%)</span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"".($altre['visits']/$total_accessi * 350)."\" height=\"7px\"> (".round($altre['visits']*100/$total_accessi,1)."%)</span></td></tr>";
 
   		$return.=
   			"<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"3\" nowrap></td></tr>".
-  			"<tr><td bgcolor=$style[table_bgcolor] colspan=\"3\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"7\" height=\"7\"> $string[hits] <img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"7\" height=\"7\"> $string[visite]</span></center></td></tr>".
+  			"<tr><td bgcolor=$style[table_bgcolor] colspan=\"3\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"7\" height=\"7px\"> $string[hits] <img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"7\" height=\"7px\"> $string[visite]</span></center></td></tr>".
 //  			"<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"3\" nowrap></td></tr>".
   			"</table>";
   	}

@@ -159,12 +159,12 @@ if($dataFound){
                 "<td bgcolor=$style[table_bgcolor] align=\"left\"><span class=\"tabletextA\">$resolution</span></td>".
                 "<td bgcolor=$style[table_bgcolor] align=\"left\"><span class=\"tabletextA\">$colorDepth</span></td>".
                 "<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$sumhits</b></span><br><span class=\"tabletextA\"><b>$sumvisits</b></span></td>".
-                "<td bgcolor=$style[table_bgcolor]><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"$hitsBarLength\" height=\"7\"> ($hitsPercent%)</span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"$visitsBarLength\" height=\"7\"> ($visitsPercent%)</span></td>".
+                "<td bgcolor=$style[table_bgcolor]><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"$hitsBarLength\" height=\"7px\"> ($hitsPercent%)</span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"$visitsBarLength\" height=\"7px\"> ($visitsPercent%)</span></td>".
                 '</tr>';
         }
         $return.=
         "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"7\" nowrap></td></tr>".
-        "<tr><td bgcolor=$style[table_bgcolor] colspan=\"7\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"7\" height=\"7\"> $string[hits] <img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"7\" height=\"7\"> $string[visite]</span></center></td></tr>".
+        "<tr><td bgcolor=$style[table_bgcolor] colspan=\"7\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"7\" height=\"7px\"> $string[hits] <img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"7\" height=\"7px\"> $string[visite]</span></center></td></tr>".
 //        "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"7\" nowrap></td></tr>".
         '</table>';
 }

@@ -132,7 +132,7 @@ if($dataFound){
                 unset($data_os);
 				usort($processed_os, '_osbw_sort_cmp');		/*** ORDINA IN BASE AL NUMERO DI VISITATORI ***/
         }
-        else{											/* Ordina raggruppando la prima parola del nome (ignorando quindi n° di versione) */
+        else{											/* Ordina raggruppando la prima parola del nome (ignorando quindi nï¿½ di versione) */
                 $osnames=Array();
                 $count=0;
                 for($i=0,$tot=count($data_os);$i<$tot;++$i){
@@ -164,7 +164,7 @@ if($dataFound){
                 unset($data_bw);
 				usort($processed_bw, '_osbw_sort_cmp');		/*** ORDINA IN BASE AL NUMERO DI VISITATORI ***/
         }
-        else{											/*** Ordina raggruppando la prima parola del nome (ignorando quindi n° di versione) ***/
+        else{											/*** Ordina raggruppando la prima parola del nome (ignorando quindi nï¿½ di versione) ***/
                 $bwnames=Array();
                 $count=0;
                 for($i=0,$tot=count($data_bw);$i<$tot;++$i){
@@ -266,13 +266,13 @@ if($dataFound){
                 "<td bgcolor=$style[table_bgcolor] width=\"14\"><img src=\"$picurl\"></td>".
                 "<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\">$name</span></td>".
                 "<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$hits</b></span><br><span class=\"tabletextA\"><b>$visits</b></span></td>".
-                "<td bgcolor=$style[table_bgcolor]><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"$hitsbarlength\" height=\"7\"> ($percenthits%)</span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"$visitsbarlength\" height=\"7\"> ($percentvisits%)</span></td>".
+                "<td bgcolor=$style[table_bgcolor]><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"$hitsbarlength\" height=\"7px\"> ($percenthits%)</span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"$visitsbarlength\" height=\"7px\"> ($percentvisits%)</span></td>".
                 "</tr>";
         }
         unset($output_os);
         $return.=
         "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"4\" nowrap></td></tr>".
-        "<tr><td bgcolor=$style[table_bgcolor] colspan=\"4\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"7\" height=\"7\"> $string[hits] <img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"7\" height=\"7\"> $string[visite]</span></center></td></tr>".
+        "<tr><td bgcolor=$style[table_bgcolor] colspan=\"4\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"7\" height=\"7px\"> $string[hits] <img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"7\" height=\"7px\"> $string[visite]</span></center></td></tr>".
         "</table>".
         "<br><br>";
 
@@ -300,13 +300,13 @@ if($dataFound){
                 "<td bgcolor=$style[table_bgcolor] width=\"14\"><img src=\"$picurl\"></td>".
                 "<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\">$name</span></td>".
                 "<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$hits</b></span><br><span class=\"tabletextA\"><b>$visits</b></span></td>".
-                "<td bgcolor=$style[table_bgcolor]><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"$hitsbarlength\" height=\"7\"> ($percenthits%)</span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"$visitsbarlength\" height=\"7\"> ($percentvisits%)</span></td>".
+                "<td bgcolor=$style[table_bgcolor]><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"$hitsbarlength\" height=\"7px\"> ($percenthits%)</span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"$visitsbarlength\" height=\"7px\"> ($percentvisits%)</span></td>".
                 "</tr>";
         }
         unset($output_bw);
         $return.=
         "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"4\" nowrap></td></tr>".
-        "<tr><td bgcolor=$style[table_bgcolor] colspan=\"4\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"7\" height=\"7\"> $string[hits] <img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"7\" height=\"7\"> $string[visite]</span></center></td></tr>".
+        "<tr><td bgcolor=$style[table_bgcolor] colspan=\"4\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"7\" height=\"7px\"> $string[hits] <img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"7\" height=\"7px\"> $string[visite]</span></center></td></tr>".
 //        "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"4\" nowrap></td></tr>".
         "</table>";
 }

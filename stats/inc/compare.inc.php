@@ -171,19 +171,19 @@ function compare()
 		$return .= "<table bgcolor=$style[table_bgcolor] border=\"0\" cellpadding=\"1\" cellspacing=\"1\" align=\"center\">" . "<tr><td><table bgcolor=$style[table_bgcolor] border=\"0\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">" . "<tr><td height=\"30\"><span class=\"testo\">" . ($tmp * 5) . "</span></td></tr>" . "<tr><td height=\"30\"><span class=\"testo\">" . ($tmp * 4) . "</span></td></tr>" . "<tr><td height=\"30\"><span class=\"testo\">" . ($tmp * 3) . "</span></td></tr>" . "<tr><td height=\"30\"><span class=\"testo\">" . ($tmp * 2) . "</span></td></tr>" . "<tr><td height=\"30\"><span class=\"testo\">" . ($tmp * 1) . "</span></td></tr>" . "</table></td>";
 		for ($i = 1; $i <= 31; ++$i)
 			$return .= "<td height=\"200\" width=\"15\" valign=\"bottom\" align=\"center\" background=\"templates/$option[template]/images/table_grid.gif\"><img src=\"templates/$option[template]/images/style_bar_3.gif\"\" width=\"5\" height=\"" . ($lista_accessi_1[$i] / $max_v * 187) . "\"  title=\"$lista_accessi_1[$i]\"><img src=\"templates/$option[template]/images/style_bar_4.gif\"\" width=\"5\" height=\"" . ($lista_accessi_2[$i] / $max_v * 187) . "\" title=\"$lista_accessi_2[$i]\"></td>";
-		$return .= "<td height=\"200\" width=\"1\" valign=\"bottom\" align=\"center\" background=\"templates/$option[template]/images/table_grid.gif\"></td>" . "</td></tr><tr><td><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"7\" height=\"7\"></td>";
+		$return .= "<td height=\"200\" width=\"1\" valign=\"bottom\" align=\"center\" background=\"templates/$option[template]/images/table_grid.gif\"></td>" . "</td></tr><tr><td><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"7\" height=\"7px\"></td>";
 		for ($i = 1; $i <= 31; ++$i) {
 			list($giorno, $weekday) = explode('-', date('d-w', mktime(0, 0, 0, $mounth1, $i, $year1)));
 			if (checkdate($mounth1, $i, $year1))
 				$return .= "<td><span class=\"" . ($weekday == 0 ? 'tabletextB' : 'tabletextA') . "\">$giorno</span></td>";
 		}
-		$return .= "</tr><td><img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"7\" height=\"7\"></td>";
+		$return .= "</tr><td><img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"7\" height=\"7px\"></td>";
 		for ($i = 1; $i <= 31; ++$i) {
 			list($giorno, $weekday) = explode('-', date('d-w', mktime(0, 0, 0, $mounth2, $i, $year2)));
 			if (checkdate($mounth2, $i, $year2))
 				$return .= "<td><span class=\"" . ($weekday == 0 ? 'tabletextB' : 'tabletextA') . "\">$giorno</span></td>";
 		}
-		$return .= "</tr>" . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"32\" nowrap></td></tr>" . "<tr><td bgcolor=$style[table_bgcolor] colspan=\"32\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"7\" height=\"7\"> " . $varie['mounts'][$mounth1 - 1] . " $year1 <img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"7\" height=\"7\"> " . $varie['mounts'][$mounth2 - 1] . " $year2 </span></center></td></tr>" . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"32\" nowrap></td></tr>" . "</table>";
+		$return .= "</tr>" . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"32\" nowrap></td></tr>" . "<tr><td bgcolor=$style[table_bgcolor] colspan=\"32\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"7\" height=\"7px\"> " . $varie['mounts'][$mounth1 - 1] . " $year1 <img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"7\" height=\"7px\"> " . $varie['mounts'][$mounth2 - 1] . " $year2 </span></center></td></tr>" . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"32\" nowrap></td></tr>" . "</table>";
 		////////////////
 		// VISITATORI //
 		////////////////
@@ -193,19 +193,19 @@ function compare()
 		$return .= "<br><span class=\"pagetitle\">$string[compare_visits]<br><br></span>" . "<table bgcolor=$style[table_bgcolor] border=\"0\" cellpadding=\"1\" cellspacing=\"1\" align=\"center\">" . "<tr><td><table bgcolor=$style[table_bgcolor] border=\"0\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">" . "<tr><td height=\"30\"><span class=\"testo\">" . ($tmp * 5) . "</span></td></tr>" . "<tr><td height=\"30\"><span class=\"testo\">" . ($tmp * 4) . "</span></td></tr>" . "<tr><td height=\"30\"><span class=\"testo\">" . ($tmp * 3) . "</span></td></tr>" . "<tr><td height=\"30\"><span class=\"testo\">" . ($tmp * 2) . "</span></td></tr>" . "<tr><td height=\"30\"><span class=\"testo\">" . ($tmp * 1) . "</span></td></tr>" . "</table></td>";
 		for ($i = 1; $i <= 31; ++$i)
 			$return .= "<td height=\"200\" width=\"15\" valign=\"bottom\" align=\"center\" background=\"templates/$option[template]/images/table_grid.gif\"><img src=\"templates/$option[template]/images/style_bar_3.gif\"\" width=\"5\" height=\"" . ($lista_visite_1[$i] / $max_v * 187) . "\"  title=\"$lista_visite_1[$i]\"><img src=\"templates/$option[template]/images/style_bar_4.gif\"\" width=\"5\" height=\"" . ($lista_visite_2[$i] / $max_v * 187) . "\" title=\"$lista_visite_2[$i]\"></td>";
-		$return .= "<td height=\"200\" width=\"1\" valign=\"bottom\" align=\"center\" background=\"templates/$option[template]/images/table_grid.gif\"></td>" . "</td></tr><tr><td><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"7\" height=\"7\"></td>";
+		$return .= "<td height=\"200\" width=\"1\" valign=\"bottom\" align=\"center\" background=\"templates/$option[template]/images/table_grid.gif\"></td>" . "</td></tr><tr><td><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"7\" height=\"7px\"></td>";
 		for ($i = 1; $i <= 31; ++$i) {
 			list($giorno, $weekday) = explode('-', date('d-w', mktime(0, 0, 0, $mounth1, $i, $year1)));
 			if (checkdate($mounth1, $i, $year1))
 				$return .= "<td><span class=\"" . ($weekday == 0 ? 'tabletextB' : 'tabletextA') . "\">$giorno</span></td>";
 		}
-		$return .= "</tr><td><img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"7\" height=\"7\"></td>";
+		$return .= "</tr><td><img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"7\" height=\"7px\"></td>";
 		for ($i = 1; $i <= 31; ++$i) {
 			list($giorno, $weekday) = explode('-', date('d-w', mktime(0, 0, 0, $mounth2, $i, $year2)));
 			if (checkdate($mounth2, $i, $year2))
 				$return .= "<td><span class=\"" . ($weekday == 0 ? 'tabletextB' : 'tabletextA') . "\">$giorno</span></td>";
 		}
-		$return .= "</tr>" . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"32\" nowrap></td></tr>" . "<tr><td bgcolor=$style[table_bgcolor] colspan=\"32\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"7\" height=\"7\"> " . $varie['mounts'][$mounth1 - 1] . " $year1 <img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"7\" height=\"7\"> " . $varie['mounts'][$mounth2 - 1] . " $year2 </span></center></td></tr>" . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"32\" nowrap></td></tr>" . "</table>";
+		$return .= "</tr>" . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"32\" nowrap></td></tr>" . "<tr><td bgcolor=$style[table_bgcolor] colspan=\"32\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"7\" height=\"7px\"> " . $varie['mounts'][$mounth1 - 1] . " $year1 <img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"7\" height=\"7px\"> " . $varie['mounts'][$mounth2 - 1] . " $year2 </span></center></td></tr>" . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"32\" nowrap></td></tr>" . "</table>";
 		
 		//////////////////////////////////////
 		// GENERO IL GRAFICO IN ORIZZONTALE //
@@ -216,7 +216,7 @@ function compare()
 			list($giorno, $weekday) = explode('-', date('d-w', mktime(0, 0, 0, $mounth1, $i, $year1)));
 			if ((checkdate($mounth1, $i, $year1)) | (checkdate($mounth2, $i, $year2))) {
 				$max = max($max_accessi, 1);
-				$return .= "<td bgcolor=$style[table_bgcolor] align=\"right\" width=\"170\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"" . ($lista_accessi_1[$i] / $max * 170) . "\" height=\"7\"></span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"" . ($lista_accessi_2[$i] / $max * 170) . "\" height=\"7\"></span></td><td bgcolor=$style[table_bgcolor] align=\"left\"><span class=\"tabletextA\"><b>$lista_accessi_1[$i]</b></span><br><span class=\"tabletextA\"><b>$lista_accessi_2[$i]</b></span></td>";
+				$return .= "<td bgcolor=$style[table_bgcolor] align=\"right\" width=\"170\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"" . ($lista_accessi_1[$i] / $max * 170) . "\" height=\"7px\"></span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"" . ($lista_accessi_2[$i] / $max * 170) . "\" height=\"7px\"></span></td><td bgcolor=$style[table_bgcolor] align=\"left\"><span class=\"tabletextA\"><b>$lista_accessi_1[$i]</b></span><br><span class=\"tabletextA\"><b>$lista_accessi_2[$i]</b></span></td>";
 				if (checkdate($mounth1, $i, $year1))
 					$return .= "<td bgcolor=$style[table_bgcolor] align=\"center\"><span class=\"" . ($weekday == 0 ? 'tabletextB' : 'tabletextA') . "\">$giorno</span></td>";
 				else
@@ -231,7 +231,7 @@ function compare()
 					$return .= "<td bgcolor=$style[table_bgcolor] align=\"center\"><span class=\"" . ($weekday == 0 ? 'tabletextB' : 'tabletextA') . "\">$giorno</span></td>";
 				else
 					$return .= "<td bgcolor=$style[table_bgcolor]></td>";
-				$return .= "<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$lista_visite_1[$i]</b></span><br><span class=\"tabletextA\"><b>$lista_visite_2[$i]</b></span></td><td bgcolor=$style[table_bgcolor] align=\"left\" width=\"170\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"" . ($lista_visite_1[$i] / $max * 170) . "\" height=\"7\"></span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"" . ($lista_visite_2[$i] / $max * 170) . "\" height=\"7\"></span></td>";
+				$return .= "<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$lista_visite_1[$i]</b></span><br><span class=\"tabletextA\"><b>$lista_visite_2[$i]</b></span></td><td bgcolor=$style[table_bgcolor] align=\"left\" width=\"170\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"" . ($lista_visite_1[$i] / $max * 170) . "\" height=\"7px\"></span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"" . ($lista_visite_2[$i] / $max * 170) . "\" height=\"7px\"></span></td>";
 			} else
 				$return .= "<td bgcolor=$style[table_bgcolor]></td><td bgcolor=$style[table_bgcolor]></td><td bgcolor=$style[table_bgcolor]></td>";
 			
@@ -240,7 +240,7 @@ function compare()
 			$totali_visite_1 += $lista_visite_1[$i];
 			$totali_visite_2 += $lista_visite_2[$i];
 		}
-		$return .= "<tr><td bgcolor=$style[table_bgcolor]></td><td bgcolor=$style[table_bgcolor] align=\"left\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"7\" height=\"7\"> <b>$totali_accessi_1</b></span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"7\" height=\"7\"> <b>$totali_accessi_2</b></span></td>" . "<td bgcolor=$style[table_bgcolor] align=\"center\" colspan=\"2\" nowrap><span class=\"tabletextA\"><b>$string[compare_total]</b></span></td>" . "<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$totali_visite_1</b> <img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"7\" height=\"7\"></span><br><span class=\"tabletextA\"><b>$totali_visite_2</b> <img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"7\" height=\"7\"></span></td><td bgcolor=$style[table_bgcolor]></td></tr>" . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"6\" nowrap></td></tr>" . "<tr><td bgcolor=$style[table_bgcolor] colspan=\"6\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"7\" height=\"7\"> " . $varie['mounts'][$mounth1 - 1] . " $year1 <img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"7\" height=\"7\"> " . $varie['mounts'][$mounth2 - 1] . " $year2 </span></center></td></tr>" . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"6\" nowrap></td></tr>" . "</table>";
+		$return .= "<tr><td bgcolor=$style[table_bgcolor]></td><td bgcolor=$style[table_bgcolor] align=\"left\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"7\" height=\"7px\"> <b>$totali_accessi_1</b></span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"7\" height=\"7px\"> <b>$totali_accessi_2</b></span></td>" . "<td bgcolor=$style[table_bgcolor] align=\"center\" colspan=\"2\" nowrap><span class=\"tabletextA\"><b>$string[compare_total]</b></span></td>" . "<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$totali_visite_1</b> <img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"7\" height=\"7px\"></span><br><span class=\"tabletextA\"><b>$totali_visite_2</b> <img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"7\" height=\"7px\"></span></td><td bgcolor=$style[table_bgcolor]></td></tr>" . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"6\" nowrap></td></tr>" . "<tr><td bgcolor=$style[table_bgcolor] colspan=\"6\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"7\" height=\"7px\"> " . $varie['mounts'][$mounth1 - 1] . " $year1 <img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"7\" height\":\"7\"> " . $varie['mounts'][$mounth2 - 1] . " $year2 </span></center></td></tr>" . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"6\" nowrap></td></tr>" . "</table>";
 	}
 /*	if ($modulo[11] && $view_graphics !== 0) {
 		// SELEZIONE MODALITA'

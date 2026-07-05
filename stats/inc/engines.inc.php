@@ -116,7 +116,7 @@ if($total_hits>0)
   $tables=Array('engine'=>'engine','domain'=>'domain','enginedomain'=>'engine,domain','hits'=>'dummy');
   $modes=Array('0'=>'DESC','1'=>'ASC');
   //
-  //!!!qui ci sarà anche da inserire paese occhio a draw_table_title
+  //!!!qui ci sarï¿½ anche da inserire paese occhio a draw_table_title
   //
   $q_sort=(isset($tables[$sort]) ? $tables[$sort] : 'dummy');
   $q_order=(isset($modes[$order]) ? $modes[$order] : 'DESC');
@@ -155,13 +155,13 @@ if($total_hits>0)
         "\n\t<td bgcolor=$style[table_bgcolor] width=\"16\"><img src=\"$image\"></td>".
         "\n\t<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\">$query_engine (".$domain_name[$query_domain].")</span></td>".
         "\n\t<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$query_sumvisits</b></span></td>".
-        "\n\t<td bgcolor=$style[table_bgcolor] nowrap=\"1\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"".($query_sumvisits/$max_hits*100)."\" height=\"7\"> (".round($query_sumvisits*100/$total_hits,2)."%)</span></td>";
+        "\n\t<td bgcolor=$style[table_bgcolor] nowrap=\"1\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"".($query_sumvisits/$max_hits*100)."\" height=\"7px\"> (".round($query_sumvisits*100/$total_hits,2)."%)</span></td>";
         if($query_engine===$engine_details && $query_domain===$domain_details)
           {
-          $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"16\"><a href=\"admin.php?action=engines&mode=$mode&enginemode=$enginemode&sort=$sort&order=$order&mese=$sel_anno-$sel_mese\"><img src=\"templates/$option[template]/images/icon_collapse.gif\" border=\"0\" title=\"$string[se_collapse_alt]\"></a></td>";
+          $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"24\"><a href=\"admin.php?action=engines&mode=$mode&enginemode=$enginemode&sort=$sort&order=$order&mese=$sel_anno-$sel_mese\"><img src=\"templates/$option[template]/images/icon_collapse.png\" border=\"0\" title=\"$string[se_collapse_alt]\"></a></td>";
           $display_details=TRUE;
           }
-        else $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"16\"><a href=\"admin.php?action=engines&mode=$mode&enginemode=$enginemode&engine_details=$query_engine&domain_details=$query_domain&sort=$sort&order=$order&mese=$sel_anno-$sel_mese\"><img src=\"templates/$option[template]/images/icon_expand.gif\" border=\"0\" title=\"$string[se_expand_alt]\"></a></td>";
+        else $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"24\"><a href=\"admin.php?action=engines&mode=$mode&enginemode=$enginemode&engine_details=$query_engine&domain_details=$query_domain&sort=$sort&order=$order&mese=$sel_anno-$sel_mese\"><img src=\"templates/$option[template]/images/icon_expand.png\" border=\"0\" title=\"$string[se_expand_alt]\"></a></td>";
         $return.="\n</tr>";
       break;
 
@@ -173,13 +173,13 @@ if($total_hits>0)
         "\n\t<td bgcolor=$style[table_bgcolor] width=\"16\"><img src=\"$image\"></td>".
         "\n\t<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\">$query_engine</span></td>".
         "\n\t<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$query_sumvisits</b></span></td>".
-        "\n\t<td bgcolor=$style[table_bgcolor] nowrap=\"1\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"".($query_sumvisits/$max_hits*100)."\" height=\"7\"> (".round($query_sumvisits*100/$total_hits,2)."%)</span></td>";
+        "\n\t<td bgcolor=$style[table_bgcolor] nowrap=\"1\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"".($query_sumvisits/$max_hits*100)."\" height=\"7px\"> (".round($query_sumvisits*100/$total_hits,2)."%)</span></td>";
         if($query_engine===$engine_details)
           {
-          $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"16\"><a href=\"admin.php?action=engines&mode=$mode&enginemode=$enginemode&sort=$sort&order=$order&mese=$sel_anno-$sel_mese\"><img src=\"templates/$option[template]/images/icon_collapse.gif\" border=\"0\" title=\"$string[se_collapse_alt]\"></a></td>";
+          $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"24\"><a href=\"admin.php?action=engines&mode=$mode&enginemode=$enginemode&sort=$sort&order=$order&mese=$sel_anno-$sel_mese\"><img src=\"templates/$option[template]/images/icon_collapse.png\" border=\"0\" title=\"$string[se_collapse_alt]\"></a></td>";
           $display_details=TRUE;
           }
-        else $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"16\"><a href=\"admin.php?action=engines&mode=$mode&enginemode=$enginemode&engine_details=$query_engine&sort=$sort&order=$order&mese=$sel_anno-$sel_mese\"><img src=\"templates/$option[template]/images/icon_expand.gif\" border=\"0\" title=\"$string[se_expand_alt]\"></a></td>";
+        else $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"24\"><a href=\"admin.php?action=engines&mode=$mode&enginemode=$enginemode&engine_details=$query_engine&sort=$sort&order=$order&mese=$sel_anno-$sel_mese\"><img src=\"templates/$option[template]/images/icon_expand.png\" border=\"0\" title=\"$string[se_expand_alt]\"></a></td>";
         $return.="\n</tr>";
       break;
 
@@ -191,13 +191,13 @@ if($total_hits>0)
         "\n\t<td bgcolor=$style[table_bgcolor] width=\"16\"><img src=\"$image\"></td>".
         "\n\t<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\">".$domain_name[$query_domain]."</span></td>".
         "\n\t<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$query_sumvisits</b></span></td>".
-        "\n\t<td bgcolor=$style[table_bgcolor] nowrap=\"1\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"".($query_sumvisits/$max_hits*100)."\" height=\"7\"> (".round($query_sumvisits*100/$total_hits,2)."%)</span></td>";
+        "\n\t<td bgcolor=$style[table_bgcolor] nowrap=\"1\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"".($query_sumvisits/$max_hits*100)."\" height=\"7px\"> (".round($query_sumvisits*100/$total_hits,2)."%)</span></td>";
         if($query_domain===$domain_details)
           {
-          $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"16\"><a href=\"admin.php?action=engines&mode=$mode&enginemode=$enginemode&sort=$sort&order=$order&mese=$sel_anno-$sel_mese\"><img src=\"templates/$option[template]/images/icon_collapse.gif\" border=\"0\" title=\"$string[se_collapse_alt]\"></a></td>";
+          $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"24\"><a href=\"admin.php?action=engines&mode=$mode&enginemode=$enginemode&sort=$sort&order=$order&mese=$sel_anno-$sel_mese\"><img src=\"templates/$option[template]/images/icon_collapse.png\" border=\"0\" title=\"$string[se_collapse_alt]\"></a></td>";
           $display_details=TRUE;
           }
-        else $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"16\"><a href=\"admin.php?action=engines&mode=$mode&enginemode=$enginemode&domain_details=$query_domain&sort=$sort&order=$order&mese=$sel_anno-$sel_mese\"><img src=\"templates/$option[template]/images/icon_expand.gif\" border=\"0\" title=\"$string[se_expand_alt]\"></a></td>";
+        else $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"24\"><a href=\"admin.php?action=engines&mode=$mode&enginemode=$enginemode&domain_details=$query_domain&sort=$sort&order=$order&mese=$sel_anno-$sel_mese\"><img src=\"templates/$option[template]/images/icon_expand.png\" border=\"0\" title=\"$string[se_expand_alt]\"></a></td>";
         $return.="\n</tr>";
       break;
       }

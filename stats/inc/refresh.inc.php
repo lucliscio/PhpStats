@@ -18,7 +18,7 @@ $num_refers=100; // Referer analizzati alla volta
 $date=time();
 $body='';
 
-// Per evitare il timeout dello script. NOTA: Non ha effetto se php è in safe-mode.
+// Per evitare il timeout dello script. NOTA: Non ha effetto se php ï¿½ in safe-mode.
 set_time_limit(1200);
 
 if($totali==-1){
@@ -66,7 +66,7 @@ else{
   
 }
 $percent=round(200*($analizzati/$totali));
-$body.="<br><br><table cellpadding=0 cellspacing=0 border=1 width=200><tr><td><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=$percent height=7></td></tr></table>";
+$body.="<br><br><table cellpadding=0 cellspacing=0 border=1 width=200><tr><td><img src=\"templates/$option[template]/images/style_bar_1.png\" width=$percent height=7></td></tr></table>";
 $return=info_box($string['refr_title'],$body);
 return($return);
 }

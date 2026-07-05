@@ -14,27 +14,27 @@ define('IN_PHPSTATS', true);
 error_reporting(E_ALL);
 
 // Inizializzazione delle variabili
-           $short_url=1;  // Mostra url corti quando possibile - Show short url when it's possible
-         $is_loged_in=0;  // Non loggato - Not logged in
-             $refresh=0;  // Nessun refresh della pagina se non diversamente specificato - No refresh page if not specified
-          $update_msg=0;  // Nessun update disponibile - No update avaible
+$short_url=1;  // Mostra url corti quando possibile - Show short url when it's possible
+$is_loged_in=0;  // Non loggato - Not logged in
+$refresh=0;  // Nessun refresh della pagina se non diversamente specificato - No refresh page if not specified
+$update_msg=0;  // Nessun update disponibile - No update avaible
 $error['debug_level']=0;  // Debug si attiva da solo in caso di errore - Debug activated only in case of error
-              $style='';  // In caso di register globals=on - For register globals=on
-          $cache_recn=0;  // Flag riconoscimento cache - Flag for recognition cache
+$style='';  // In caso di register globals=on - For register globals=on
+$cache_recn=0;  // Flag riconoscimento cache - Flag for recognition cache
 $php_stats_esclusion='';  // Esclusione vuota fino a prova contraria - Empty exclusion until contrary test
-      $protect_action=Array('login','esclusioni','preferenze','refresh','backup','resett','downadmin','clicksadmin','optimize_tables','viewerrorlog','modify_config'); // Azioni che richiedono il login
-    $norefresh_action=Array('login','logout','esclusioni','preferenze','refresh','backup','resett','downadmin','clicksadmin','optimize_tables','viewerrorlog','modify_config'); // Azioni che non hanno refresh in visualizzazione
-      $cache_recn_arr=Array('main','os_browser','reso','systems','daily','weekly','monthly','calendar','compare','country','bw_lang','trend','ip');  // Azioni che usano la cache
-           $page_list=Array('main','details','os_browser','reso','systems','pages','percorsi','time_pages','referer','engines','query','searched_words','hourly','daily','weekly','monthly','calendar','compare','ip','country','bw_lang','links','downloads','clicks','trend');
+$protect_action=Array('login','esclusioni','preferenze','refresh','backup','resett','downadmin','clicksadmin','optimize_tables','viewerrorlog','modify_config'); // Azioni che richiedono il login
+$norefresh_action=Array('login','logout','esclusioni','preferenze','refresh','backup','resett','downadmin','clicksadmin','optimize_tables','viewerrorlog','modify_config'); // Azioni che non hanno refresh in visualizzazione
+$cache_recn_arr=Array('main','os_browser','reso','systems','daily','weekly','monthly','calendar','compare','country','bw_lang','trend','ip');  // Azioni che usano la cache
+$page_list=Array('main','details','os_browser','reso','systems','pages','percorsi','time_pages','referer','engines','query','searched_words','hourly','daily','weekly','monthly','calendar','compare','ip','country','bw_lang','links','downloads','clicks','trend');
 
 
 $GLOBALS['totalqueries']=0; // Contatore Query - Counter Queries
 
 
 // Richiamo variabili esterne - Call external vars
-                         if(!isset($_GET)) $_GET=$HTTP_GET_VARS;
-                      if(!isset($_COOKIE)) $_COOKIE=$HTTP_COOKIE_VARS;
-                      if(!isset($_SERVER)) $_SERVER=$HTTP_SERVER_VARS;
+//if(!isset($_GET)) $_GET=$HTTP_GET_VARS;
+//if(!isset($_COOKIE)) $_COOKIE=$HTTP_COOKIE_VARS;
+//if(!isset($_SERVER)) $_SERVER=$HTTP_SERVER_VARS;
 
                 if(isset($_GET['action'])) $action=$_GET['action']; else $action='main';
                if(isset($_GET['opzioni'])) $opzioni=$_GET['opzioni']; else $opzioni='';

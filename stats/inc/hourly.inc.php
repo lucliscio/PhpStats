@@ -130,7 +130,7 @@ function hourly()
 			$count = $i;
 		$return .= "<td><span class=\"testo\">$count</span></td>";
 	}
-	$return .= '</tr>' . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"26\" nowrap></td></tr>" . "<tr><td bgcolor=$style[table_bgcolor] colspan=\"26\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"7\" height=\"7\"> $string[hits] <img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"7\" height=\"7\"> $string[visite]</span></center></td></tr>" . 
+	$return .= '</tr>' . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"26\" nowrap></td></tr>" . "<tr><td bgcolor=$style[table_bgcolor] colspan=\"26\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"7\" height=\"7px\"> $string[hits] <img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"7\" height=\"7px\"> $string[visite]</span></center></td></tr>" . 
 	//"<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"26\" nowrap></td></tr>".
 		'</table>';
 	

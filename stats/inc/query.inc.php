@@ -57,7 +57,7 @@ $rec_pag=50; // risultati visualizzati per pagina
 $max_hits=$total_hits=0;
 if(strlen("$sel_mese")<2) $sel_mese='0'.$sel_mese;
 
-$query_details_parse=addslashes(function_exists(html_entity_decode) ? html_entity_decode($query_details) : strtr($query_details,array_flip(get_html_translation_table(HTML_ENTITIES))));
+$query_details_parse=addslashes(function_exists('html_entity_decode') ? html_entity_decode($query_details) : strtr($query_details,array_flip(get_html_translation_table(HTML_ENTITIES))));
 if($mode==0){
         if($q==''){
                 $clause="WHERE mese='$sel_anno-$sel_mese'";
@@ -152,12 +152,12 @@ $query_data=utf8_decode($query_data);
 
                         $image='images/engines.php?q='.str_replace(' ','-',$query_engine);
                         $return.="<tr onmouseover=\"setPointer(this, '$style[table_hitlight]', '$style[table_bgcolor]')\" onmouseout=\"setPointer(this, '$style[table_bgcolor]', '$style[table_bgcolor]')\">";
-                        if($query_data===$query_details && $query_engine===$engine_details && $query_domain===$domain_details) $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"16\"><a href=\"admin.php?action=query&mode=$mode&sort=$sort&order=$order&mese=$sel_anno-$sel_mese&start=$start&q=$q\"><img src=\"templates/$option[template]/images/icon_collapse.gif\" border=\"0\" title=\"$string[query_collapse_alt]\"></a></td>";
-                        else $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"16\"><a href=\"admin.php?action=query&mode=$mode&query_details=".urlencode(str_replace('&','&amp;',$query_data))."&engine_details=$query_engine&domain_details=$query_domain&sort=$sort&order=$order&mese=$sel_anno-$sel_mese&start=$start&q=$q\"><img src=\"templates/$option[template]/images/icon_expand.gif\" border=\"0\" title=\"$string[query_expand_alt]\"></a></td>";
+                        if($query_data===$query_details && $query_engine===$engine_details && $query_domain===$domain_details) $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"16\"><a href=\"admin.php?action=query&mode=$mode&sort=$sort&order=$order&mese=$sel_anno-$sel_mese&start=$start&q=$q\"><img src=\"templates/$option[template]/images/icon_collapse.png\" border=\"0\" title=\"$string[query_collapse_alt]\"></a></td>";
+                        else $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"16\"><a href=\"admin.php?action=query&mode=$mode&query_details=".urlencode(str_replace('&','&amp;',$query_data))."&engine_details=$query_engine&domain_details=$query_domain&sort=$sort&order=$order&mese=$sel_anno-$sel_mese&start=$start&q=$q\"><img src=\"templates/$option[template]/images/icon_expand.png\" border=\"0\" title=\"$string[query_expand_alt]\"></a></td>";
                         $return.=
                         "<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\">$query_data</span></td><td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$query_sumvisits</b></span></td>".
                         "<td bgcolor=$style[table_bgcolor] nowrap=\"1\"><span class=\"tabletextA\"><img src=\"$image\" align=\"absmiddle\"> $query_engine (".@$domain_name[$query_domain].")</span></td>".
-                        "<td bgcolor=$style[table_bgcolor] nowrap=\"1\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"".($query_sumvisits/$max_hits*100)."\" height=\"7\"> (".round($query_sumvisits*100/$total_hits,2)."%)</span></td>";
+                        "<td bgcolor=$style[table_bgcolor] nowrap=\"1\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"".($query_sumvisits/$max_hits*100)."\" height=\"7px\"> (".round($query_sumvisits*100/$total_hits,2)."%)</span></td>";
 
                         if($mode==0){
                                 if(isset($query[$query_data.'|'.$query_engine.'|'.$query_domain])){
@@ -239,12 +239,12 @@ $query_data=utf8_decode($query_data);
                         list($query_data,$query_sumvisits,$query_date)=$row;
 	$query_data=utf8_decode($query_data);
                         $return.="<tr onmouseover=\"setPointer(this, '$style[table_hitlight]', '$style[table_bgcolor]')\" onmouseout=\"setPointer(this, '$style[table_bgcolor]', '$style[table_bgcolor]')\">";
-                        if($query_data===$query_details) $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"16\"><a href=\"admin.php?action=query&mode=$mode&sort=$sort&order=$order&mese=$sel_anno-$sel_mese&start=$start&q=$q\"><img src=\"templates/$option[template]/images/icon_collapse.gif\" border=\"0\" title=\"$string[query_collapse_alt]\"></a></td>";
-                        else $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"16\"><a href=\"admin.php?action=query&mode=$mode&query_details=".urlencode(str_replace('&','&amp;',$query_data))."&sort=$sort&order=$order&mese=$sel_anno-$sel_mese&start=$start&q=$q\"><img src=\"templates/$option[template]/images/icon_expand.gif\" border=\"0\" title=\"$string[query_expand_alt]\"></a></td>";
+                        if($query_data===$query_details) $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"24\"><a href=\"admin.php?action=query&mode=$mode&sort=$sort&order=$order&mese=$sel_anno-$sel_mese&start=$start&q=$q\"><img src=\"templates/$option[template]/images/icon_collapse.png\" border=\"0\" title=\"$string[query_collapse_alt]\"></a></td>";
+                        else $return.="\n\t<td bgcolor=$style[table_bgcolor] align=\"right\" valign=\"middle\" width=\"24\"><a href=\"admin.php?action=query&mode=$mode&query_details=".urlencode(str_replace('&','&amp;',$query_data))."&sort=$sort&order=$order&mese=$sel_anno-$sel_mese&start=$start&q=$q\"><img src=\"templates/$option[template]/images/icon_expand.png\" border=\"0\" title=\"$string[query_expand_alt]\"></a></td>";
                         $return.=
                         "<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\">$query_data</span></td>".
                         "<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$query_sumvisits</b></span></td>".
-                        "<td bgcolor=$style[table_bgcolor] nowrap=\"1\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"".($query_sumvisits/$max_hits*100)."\" height=\"7\"> (".round($query_sumvisits*100/$total_hits,2)."%)</span></td>";
+                        "<td bgcolor=$style[table_bgcolor] nowrap=\"1\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"".($query_sumvisits/$max_hits*100)."\" height=\"7px\"> (".round($query_sumvisits*100/$total_hits,2)."%)</span></td>";
 
                         if($mode==2){
                                 if(isset($query[$query_data])){

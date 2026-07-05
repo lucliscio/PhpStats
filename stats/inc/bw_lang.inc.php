@@ -34,7 +34,7 @@ include("lang/$option[language]/bw_lang.php");
 $phpstats_title=$string['bw_lang_title'];
 //
 $return='';
-if($mode==='hits') { $mode='hits'; $img="templates/$option[template]/images/style_bar_1.gif"; } else {$mode='visits'; $img="templates/$option[template]/images/style_bar_2.gif"; }
+if($mode==='hits') { $mode='hits'; $img="templates/$option[template]/images/style_bar_1.png"; } else {$mode='visits'; $img="templates/$option[template]/images/style_bar_2.png"; }
 $total_visits=0;
 $result=sql_query("select SUM($mode) from $option[prefix]_langs");
 list($total_visits)=mysql_fetch_row($result);
@@ -54,7 +54,7 @@ if($total_visits>0)
     "<tr onmouseover=\"setPointer(this, '$style[table_hitlight]', '$style[table_bgcolor]')\" onmouseout=\"setPointer(this, '$style[table_bgcolor]', '$style[table_bgcolor]')\">".
     "<td bgcolor=$style[table_bgcolor] align=\"right\" nowrap ><span class=\"tabletextA\">".$bw_lang[$row['lang']].'</span></td>'.
     "<td align=\"right\" bgcolor=$style[table_bgcolor] nowrap><span class=\"tabletextA\"><b>$row[value]</b></span></td>".
-    "<td bgcolor=$style[table_bgcolor] nowrap><span class=\"tabletextA\"><img src=\"$img\" width=\"".($row['value']/$total_visits * 200)."\" height=\"7\"> (".round($row['value']*100/$total_visits,1).'%)</span></td>'.
+    "<td bgcolor=$style[table_bgcolor] nowrap><span class=\"tabletextA\"><img src=\"$img\" width=\"".($row['value']/$total_visits * 200)."\" height=\"7px\"> (".round($row['value']*100/$total_visits,1).'%)</span></td>'.
     '</tr>';
     }
   $return.=

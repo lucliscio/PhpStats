@@ -295,7 +295,7 @@ function daily()
 		$return .= ($isSunday ? "<td><span class=\"tabletextB\">$monthDay</span></td>" : "<td><span class=\"tabletextA\">$monthDay</span></td>");
 	}
 	
-	$return .= '</tr>' . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"32\" nowrap></td></tr>" . "<tr><td bgcolor=$style[table_bgcolor] colspan=\"32\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"7\" height=\"7\"> $string[hits]</center></td></tr>" . 
+	$return .= '</tr>' . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"32\" nowrap></td></tr>" . "<tr><td bgcolor=$style[table_bgcolor] colspan=\"32\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"7\" height=\"7px\"> $string[hits]</center></td></tr>" . 
 		'</table><br>' . "<table bgcolor=$style[table_bgcolor] border=\"0\" cellpadding=\"1\" cellspacing=\"1\" align=\"center\" class=\"tableborder\">" . "<tr><td valign=\"top\"><table bgcolor=$style[table_bgcolor] border=\"0\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">" . "<tr><td height=\"30\"><span class=\"testo\">$Vstep6</span></td></tr>" . "<tr><td height=\"30\"><span class=\"testo\">$Vstep5</span></td></tr>" . "<tr><td height=\"30\"><span class=\"testo\">$Vstep4</span></td></tr>" . "<tr><td height=\"30\"><span class=\"testo\">$Vstep3</span></td></tr>" . "<tr><td height=\"30\"><span class=\"testo\">$Vstep2</span></td></tr>" . "<tr><td height=\"30\"><span class=\"testo\">$Vstep1</span></td></tr>" . '</table></td>';
 	for ($i = 0, $tot = count($output_days); $i < $tot; ++$i) {
 		list($dayLabel, $monthDay, $monthBreak, $isSunday, $hits, $visits, $visitsVariation, $hitsVBarLength, $hitsHBarLength, $visitsVBarLength, $visitsHBarLength, $level) = $output_days[$i];
@@ -310,7 +310,7 @@ function daily()
 		$return .= ($isSunday ? "<td><span class=\"tabletextB\">$monthDay</span></td>" : "<td><span class=\"tabletextA\">$monthDay</span></td>");
 	}
 	
-	$return .= '</tr>' . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"32\" nowrap></td></tr>" . "<tr><td bgcolor=$style[table_bgcolor] colspan=\"32\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"7\" height=\"7\"> $string[visite]</span></center></td></tr>" . 
+	$return .= '</tr>' . "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"32\" nowrap></td></tr>" . "<tr><td bgcolor=$style[table_bgcolor] colspan=\"32\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"7\" height=\"7px\"> $string[visite]</span></center></td></tr>" . 
 		'</table>';
 	
 	///////////////////////////////
@@ -324,9 +324,9 @@ function daily()
 		if ($monthBreak)
 			$return .= "<tr><td  bgcolor=$style[table_bgcolor] height=\"1\" colspan=\"5\"></td></tr>";
 		
-		$return .= "<tr onmouseover=\"setPointer(this, '$style[table_hitlight]', '$style[table_bgcolor]')\" onmouseout=\"setPointer(this, '$style[table_bgcolor]', '$style[table_bgcolor]')\"><td bgcolor=$style[table_bgcolor] align=\"right\">" . "<span class=\"" . ($isSunday ? 'tabletextB' : 'tabletextA') . "\">$dayLabel</span></td>" . "<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$hits</b></span><br><span class=\"tabletextA\"><b>$visits</b></span></td><td bgcolor=$style[table_bgcolor] width=\"300\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"$hitsHBarLength\" height=\"7\"></span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"$visitsHBarLength\" height=\"7\"></span></td><td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\">$visitsVariation</span></td><td bgcolor=$style[table_bgcolor] width=\"16\"><img src=\"templates/$option[template]/images/icon_level_{$level}.gif\"></td></tr>";
+		$return .= "<tr onmouseover=\"setPointer(this, '$style[table_hitlight]', '$style[table_bgcolor]')\" onmouseout=\"setPointer(this, '$style[table_bgcolor]', '$style[table_bgcolor]')\"><td bgcolor=$style[table_bgcolor] align=\"right\">" . "<span class=\"" . ($isSunday ? 'tabletextB' : 'tabletextA') . "\">$dayLabel</span></td>" . "<td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\"><b>$hits</b></span><br><span class=\"tabletextA\"><b>$visits</b></span></td><td bgcolor=$style[table_bgcolor] width=\"300\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"$hitsHBarLength\" height=\"7px\"></span><br><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"$visitsHBarLength\" height=\"7px\"></span></td><td bgcolor=$style[table_bgcolor] align=\"right\"><span class=\"tabletextA\">$visitsVariation</span></td><td bgcolor=$style[table_bgcolor] width=\"16\"><img src=\"templates/$option[template]/images/icon_level_{$level}.png\"></td></tr>";
 	}
-	$return .= "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"5\" nowrap></td></tr>" . "<tr><td bgcolor=$style[table_bgcolor] colspan=\"5\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"7\" height=\"7\"> $string[hits] <img src=\"templates/$option[template]/images/style_bar_2.gif\" width=\"7\" height=\"7\"> $string[visite]</span></center></td></tr>" . 
+	$return .= "<tr><td height=\"1\" bgcolor=$style[table_title_bgcolor] colspan=\"5\" nowrap></td></tr>" . "<tr><td bgcolor=$style[table_bgcolor] colspan=\"5\" nowrap><span class=\"tabletextA\"><center><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"7\" height=\"7px\"> $string[hits] <img src=\"templates/$option[template]/images/style_bar_2.png\" width=\"7\" height=\"7px\"> $string[visite]</span></center></td></tr>" . 
 		"</table>";
 	
 /*	if ($modulo[11]) {

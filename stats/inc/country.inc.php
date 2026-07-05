@@ -154,12 +154,12 @@ if($dataFound){
         draw_table_title('').
         "</tr>\n";
         if($mode===0){
-                $img="templates/$option[template]/images/style_bar_2.gif";
+                $img="templates/$option[template]/images/style_bar_2.png";
                 $type=str_replace('%tipo%',$string['hits'],$string['mode']);
                 $new_mode='1';
         }
         else{
-                $img="templates/$option[template]/images/style_bar_1.gif";
+                $img="templates/$option[template]/images/style_bar_1.png";
                 $type=str_replace('%tipo%',$string['visite'],$string['mode']);
                 $new_mode='0';
         }
@@ -174,7 +174,7 @@ if($dataFound){
                 ($tld==='unknown' ? '' : " (.$tld)").
                 "</span></td>\n".
                 "<td align=\"right\" bgcolor=$style[table_bgcolor] nowrap><span class=\"tabletextA\"><b>$sumwhat</b></span></td>\n".
-                "<td bgcolor=\"$style[table_bgcolor]\" nowrap><span class=\"tabletextA\"><img src=\"$img\" width=\"$barlength\" height=\"7\"> ($percent%)</span></td>\n".
+                "<td bgcolor=\"$style[table_bgcolor]\" nowrap><span class=\"tabletextA\"><img src=\"$img\" width=\"$barlength\" height=\"7px\"> ($percent%)</span></td>\n".
                 "</tr>\n";
         }
         $return.=

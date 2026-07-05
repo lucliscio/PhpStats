@@ -211,7 +211,7 @@ if($dataFound){
                         <tr onmouseover=\"setPointer(this, '$style[table_hitlight]', '$style[table_bgcolor]')\" onmouseout=\"setPointer(this, '$style[table_bgcolor]', '$style[table_bgcolor]')\">
                                 <td bgcolor=$style[table_bgcolor] align=\"left\"><span class=\"tabletextA\">{$fascia[$i]['range']}</span></td>
                             <td bgcolor=$style[table_bgcolor] align=\"left\"><span class=\"tabletextA\">{$fascia[$i]['visite']}</span></td>
-                            <td bgcolor=$style[table_bgcolor] align=\"left\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.gif\" width=\"{$fascia[$i]['perc_image']}\" height=\"7\"> {$fascia[$i]['perc']}%</span></td>
+                            <td bgcolor=$style[table_bgcolor] align=\"left\"><span class=\"tabletextA\"><img src=\"templates/$option[template]/images/style_bar_1.png\" width=\"{$fascia[$i]['perc_image']}\" height=\"7px\"> {$fascia[$i]['perc']}%</span></td>
                         </tr>";
                 }
                 //unset($fascia,$range); Adesso posso cancellare o si deve inserire una nuova sezione unset? LoL!!
